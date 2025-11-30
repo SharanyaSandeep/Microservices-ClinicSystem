@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "aa29673a-a9ab-4a9c-8e1a-4a7abfaae361",
+		"name": "Clinic System Using API Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23580920"
+	},
+	"item": [
+		{
+			"name": "Patient MS",
+			"item": [
+				{
+					"name": "Add patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientName\": \"Ali\",\r\n    \"patientAge\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7777/patient/add-patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"patient",
+								"add-patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update patient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"patientName\": \"Mo\",\r\n    \"patientAge\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7777/patient/update-patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"patient",
+								"update-patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/patient/delete-patient?id=11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"patient",
+								"delete-patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patinet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/patient/get-patient?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"patient",
+								"get-patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payments by Patient id from Patient MS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "patientId",
+								"value": "10",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7777/patient/get-patient-payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"patient",
+								"get-patient-payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor MS",
+			"item": [
+				{
+					"name": "Patient",
+					"item": [
+						{
+							"name": "get Patient",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7777/doctor/get-patient?id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"get-patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add patient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"patientName\": \"Ali\",\r\n    \"patientAge\": 21\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7777/doctor/add-patient",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"add-patient"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update patient",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 13,\r\n    \"patientName\": \"Mo\",\r\n    \"patientAge\": 21\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7777/doctor/update-patient",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"update-patient"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete patient",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7777/doctor/delete-patient?id=19",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"delete-patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Patient Payment",
+					"item": [
+						{
+							"name": "Add payment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": \"80.78\",\r\n    \"patientId\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7777/doctor/payment/add-payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"payment",
+										"add-payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "country",
+										"value": "KSA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:7777/doctor/payment/payment-by-tran-id?tranId=3d695d08-4f92-487b-a350-cd167bc7e936",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7777",
+									"path": [
+										"doctor",
+										"payment",
+										"payment-by-tran-id"
+									],
+									"query": [
+										{
+											"key": "tranId",
+											"value": "3d695d08-4f92-487b-a350-cd167bc7e936"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment MS",
+			"item": [
+				{
+					"name": "Add payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": \"91.23\",\r\n    \"patientId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7777/payment/add-payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"payment",
+								"add-payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7777/payment/payment-by-tran-id?tranId=dea94d65-c565-413e-8c97-f051a3a3f91e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"payment",
+								"payment-by-tran-id"
+							],
+							"query": [
+								{
+									"key": "tranId",
+									"value": "dea94d65-c565-413e-8c97-f051a3a3f91e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "patientId",
+								"value": "10",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7777/payment/get-patient-payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"payment",
+								"get-patient-payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

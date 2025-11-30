@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clinic System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Clinic System Frontend</h1>
+
+    <section>
+        <h2>Get Patient by ID</h2>
+        <input type="number" id="patientIdInput" placeholder="Enter Patient ID">
+        <button onclick="getPatient()">Get Patient</button>
+
+        <pre id="patientResult"></pre>
+    </section>
+
+    <section>
+        <h2>Add New Patient</h2>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="number" id="age" placeholder="Age">
+        <button onclick="addPatient()">Add Patient</button>
+
+        <pre id="addResult"></pre>
+    </section>
+
+<script src="script.js"></script>
+</body>
+</html>
