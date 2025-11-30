@@ -1,50 +1,32 @@
 server:
-  port: 8000
-  servlet:
-    context-path: /doctor
+  port: 8081
+
 spring:
   application:
     name: DOCTOR-SERVICE
-
-  boot:
-    admin:
-      client:
-        url: http://localhost:8888
-
-management:
-  health:
-    show-details: always
-    circuitbreakers:
+  datasource:
+    url: jdbc:h2:mem:doctor_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
       enabled: true
-  endpoint:
-    health:
-      show-details: always
-  ### Spring boot admin
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  ### /Spring boot admin
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 
-resilience4j:
-  circuitbreaker:
-    instances:
-      getPatientInstance:
-        registerHealthIndicator: true
-        eventConsumerBufferSize: 10
-        failureRateThreshold: 50
-        minimumNumberOfCalls: 5
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-        waitDurationInOpenState: 5s
-        permittedNumberOfCallsInHalfOpenState: 2
-        slidingWindowSize: 10
-        slidingWindowType: COUNT_BASED
-
-logging:
-  file:
-    name: E:\ELK\logs\doctor-service.log
+# CORS configuration for frontend
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

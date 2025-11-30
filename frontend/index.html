@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Clinic System</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Clinic System – Login</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body class="auth-body">
+  <div class="auth-container">
+    <h1>Clinic Management System</h1>
+    <form id="login-form" class="card">
+      <div class="form-group">
+        <label for="username">Email / Username</label>
+        <input type="text" id="username" required />
+      </div>
 
-    <h1>Clinic System Frontend</h1>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
 
-    <section>
-        <h2>Get Patient by ID</h2>
-        <input type="number" id="patientIdInput" placeholder="Enter Patient ID">
-        <button onclick="getPatient()">Get Patient</button>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <p id="login-error" class="error-text"></p>
+    </form>
+  </div>
 
-        <pre id="patientResult"></pre>
-    </section>
-
-    <section>
-        <h2>Add New Patient</h2>
-        <input type="text" id="firstName" placeholder="First Name">
-        <input type="text" id="lastName" placeholder="Last Name">
-        <input type="number" id="age" placeholder="Age">
-        <button onclick="addPatient()">Add Patient</button>
-
-        <pre id="addResult"></pre>
-    </section>
-
-<script src="script.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Patients</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Clinic Admin</h2>
+      <nav>
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="doctors.html" class="nav-item">Doctors</a>
+        <a href="patients.html" class="nav-item active">Patients</a>
+        <a href="payments.html" class="nav-item">Payments</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1>Patient Management</h1>
+          <p>Register new patients and manage medical records</p>
+        </div>
+        <button id="btn-logout" class="btn">Logout</button>
+      </header>
+
+      <!-- Add/Edit Patient Form -->
+      <section class="card">
+        <h2 id="patient-form-title">Register New Patient</h2>
+        <form id="patient-form" class="form-grid">
+          <input type="hidden" id="patient-id" />
+          
+          <div class="form-group">
+            <label for="patient-name">Full Name</label>
+            <input type="text" id="patient-name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="patient-age">Age</label>
+            <input type="number" id="patient-age" min="0" max="120" required />
+          </div>
+
+          <div class="form-group">
+            <label for="patient-gender">Gender</label>
+            <select id="patient-gender" required>
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="patient-email">Email</label>
+            <input type="email" id="patient-email" />
+          </div>
+
+          <div class="form-group">
+            <label for="patient-phone">Phone</label>
+            <input type="tel" id="patient-phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="patient-medical-history">Medical History</label>
+            <textarea id="patient-medical-history" rows="3" placeholder="Any known allergies, conditions, or medications..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary">Save Patient</button>
+            <button type="button" id="btn-cancel-patient-edit" class="btn btn-secondary" style="display:none;">Cancel</button>
+          </div>
+        </form>
+        <p id="patient-form-error" class="error-text"></p>
+      </section>
+
+      <!-- Patients List -->
+      <section class="card" style="margin-top: 24px;">
+        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2>Patient Directory</h2>
+          <input type="text" id="patient-search" placeholder="Search patients..." style="max-width: 200px;" />
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="patients-table-body">
+            <tr><td colspan="7">Loading patients...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/patients.js"></script>
+</body>
+</html>

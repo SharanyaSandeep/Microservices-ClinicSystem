@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clinic Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Clinic Admin</h2>
+      <nav>
+        <a href="dashboard.html" class="nav-item active">Dashboard</a>
+        <a href="doctors.html" class="nav-item">Doctors</a>
+        <a href="patients.html" class="nav-item">Patients</a>
+        <a href="payments.html" class="nav-item">Payments</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Overview of clinic activity</p>
+        </div>
+        <button id="btn-logout" class="btn">Logout</button>
+      </header>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Total Patients</div>
+          <div id="metric-patients" class="metric-value">0</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Total Payments</div>
+          <div id="metric-payments" class="metric-value">0</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Revenue</div>
+          <div id="metric-revenue" class="metric-value">$0</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Recent Activity</h2>
+        <p>Welcome to the Clinic Management System. Use the menu to manage patients, doctors, and payments.</p>
+      </section>
+
+      <section class="card" style="margin-top: 20px;">
+        <div style="display:flex; justify-content: space-between; align-items: center;">
+          <h2>All Patients</h2>
+          <input
+            type="text"
+            id="patient-search"
+            placeholder="Search by name..."
+            style="max-width: 200px;"
+          />
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="patients-table-body">
+            <tr><td colspan="4">Loading patients...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

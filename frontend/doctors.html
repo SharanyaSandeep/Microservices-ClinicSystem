@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Doctors</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <h2>Clinic Admin</h2>
+      <nav>
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="doctors.html" class="nav-item active">Doctors</a>
+        <a href="patients.html" class="nav-item">Patients</a>
+        <a href="payments.html" class="nav-item">Payments</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1>Doctor Management</h1>
+          <p>Add, edit, and manage doctor profiles and schedules</p>
+        </div>
+        <button id="btn-logout" class="btn">Logout</button>
+      </header>
+
+      <!-- Add/Edit Doctor Form -->
+      <section class="card">
+        <h2 id="form-title">Add New Doctor</h2>
+        <form id="doctor-form" class="form-grid">
+          <input type="hidden" id="doctor-id" />
+          
+          <div class="form-group">
+            <label for="doctor-name">Full Name</label>
+            <input type="text" id="doctor-name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="doctor-specialty">Specialty</label>
+            <select id="doctor-specialty" required>
+              <option value="">Select specialty</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="General Medicine">General Medicine</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="doctor-email">Email</label>
+            <input type="email" id="doctor-email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="doctor-phone">Phone</label>
+            <input type="tel" id="doctor-phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="doctor-availability">Availability</label>
+            <input type="text" id="doctor-availability" placeholder="e.g., Mon-Fri 9AM-5PM" />
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary">Save Doctor</button>
+            <button type="button" id="btn-cancel-edit" class="btn btn-secondary" style="display:none;">Cancel</button>
+          </div>
+        </form>
+        <p id="form-error" class="error-text"></p>
+      </section>
+
+      <!-- Doctors List -->
+      <section class="card" style="margin-top: 24px;">
+        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2>Doctors Directory</h2>
+          <input type="text" id="doctor-search" placeholder="Search doctors..." style="max-width: 200px;" />
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Specialty</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Availability</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="doctors-table-body">
+            <tr><td colspan="7">Loading doctors...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/doctors.js"></script>
+</body>
+</html>
