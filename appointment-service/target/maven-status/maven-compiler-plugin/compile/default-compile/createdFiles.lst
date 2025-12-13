@@ -1,0 +1,7 @@
+com\clinic\appointmentservice\repository\AppointmentRepository.class
+com\clinic\appointmentservice\service\AppointmentService.class
+com\clinic\appointmentservice\model\Notification.class
+com\clinic\appointmentservice\AppointmentServiceApplication.class
+com\clinic\appointmentservice\config\AppConfig.class
+com\clinic\appointmentservice\controller\AppointmentController.class
+com\clinic\appointmentservice\entity\Appointment.class
